@@ -15,6 +15,15 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::POST('{id}/edit', 'UserController@submitEdit')->name('submitEdit-User');
     Route::GET('{id}/hapus', 'UserController@Hapus')->name('Hapus-User');
   });
+
+  Route::prefix('spesialis')->group(function () {
+    Route::GET('', 'SpesialisController@Data')->name('Data-Spesialis');
+    Route::GET('tambah', 'SpesialisController@Tambah')->name('Tambah-Spesialis');
+    Route::POST('tambah', 'SpesialisController@submitTambah')->name('submitTambah-Spesialis');
+    Route::GET('{id}/edit', 'SpesialisController@Edit')->name('Edit-Spesialis');
+    Route::POST('{id}/edit', 'SpesialisController@submitEdit')->name('submitEdit-Spesialis');
+    Route::GET('{id}/hapus', 'SpesialisController@Hapus')->name('Hapus-Spesialis');
+  });
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

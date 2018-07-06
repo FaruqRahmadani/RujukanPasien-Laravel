@@ -158,6 +158,12 @@
                 <span>User</span>
               </a>
             </li>
+            <li {{HRoute::Active('Data-Spesialis')}}>
+              <a href="{{Route('Data-Spesialis')}}">
+                <em class="icon-layers"></em>
+                <span>Spesialis</span>
+              </a>
+            </li>
             <li class=" ">
               <a href="widgets.html" title="Widgets">
                 <div class="pull-right label label-success">30</div>
