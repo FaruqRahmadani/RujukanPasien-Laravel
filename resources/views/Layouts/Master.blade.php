@@ -164,6 +164,12 @@
                 <span>Spesialis</span>
               </a>
             </li>
+            <li {{HRoute::Active('Data-Dokter')}}>
+              <a href="{{Route('Data-Dokter')}}">
+                <em class="icon-paper-clip"></em>
+                <span>Dokter</span>
+              </a>
+            </li>
             <li class=" ">
               <a href="widgets.html" title="Widgets">
                 <div class="pull-right label label-success">30</div>
