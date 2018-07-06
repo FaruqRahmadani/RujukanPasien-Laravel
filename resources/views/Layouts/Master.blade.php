@@ -118,19 +118,12 @@
               </a>
             </li>
             <li>
-              <a href="#" data-toggle-fullscreen="">
+              <a href="#" data-toggle-fullscreen="" onclick="logout()">
                 <em class="fa fa-power-off"></em>
               </a>
             </li>
           </ul>
         </div>
-        <form class="navbar-form" role="search" action="search.html">
-          <div class="form-group has-feedback">
-            <input class="form-control" type="text" placeholder="Type and hit enter ...">
-            <div class="fa fa-times form-control-feedback" data-search-dismiss=""></div>
-          </div>
-          <button class="hidden btn btn-default" type="submit">Submit</button>
-        </form>
       </nav>
     </header>
     <aside class="aside">
@@ -142,44 +135,28 @@
                 <div class="item user-block">
                   <div class="user-block-picture">
                     <div class="user-block-status">
-                      <img class="img-thumbnail img-circle" src="http://localhost/template/Angle/backend-jquery/app/img/user/02.jpg" alt="Avatar" width="60" height="60">
+                      <img class="img-thumbnail img-circle" src="{{asset('img/user/'.Auth::User()->foto)}}" alt="Avatar" width="60" height="60">
                       <div class="circle circle-success circle-lg"></div>
                     </div>
                   </div>
                   <div class="user-block-info">
-                    <span class="user-block-name">Hello, Mike</span>
-                    <span class="user-block-role">Designer</span>
+                    <span class="user-block-name">{{Auth::User()->nama}}</span>
+                    <span class="user-block-role">{{Auth::User()->TipeText}}</span>
                   </div>
                 </div>
               </div>
             </li>
-            <li class="nav-heading ">
-              <span data-localize="sidebar.heading.HEADER">Main Navigation</span>
-            </li>
-            <li class=" ">
-              <a href="#dashboard" title="Dashboard" data-toggle="collapse">
-                <div class="pull-right label label-info">3</div>
-                <em class="icon-speedometer"></em>
-                <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
+            <li {{HRoute::Active('Dashboard')}}>
+              <a href="{{Route('Dashboard')}}">
+                <em class="icon-grid"></em>
+                <span>Dashboard</span>
               </a>
-              <ul class="nav sidebar-subnav collapse" id="dashboard">
-                <li class="sidebar-subnav-header">Dashboard</li>
-                <li class=" ">
-                  <a href="dashboard.html" title="Dashboard v1">
-                    <span>Dashboard v1</span>
-                  </a>
-                </li>
-                <li class=" ">
-                  <a href="dashboard_v2.html" title="Dashboard v2">
-                    <span>Dashboard v2</span>
-                  </a>
-                </li>
-                <li class=" ">
-                  <a href="dashboard_v3.html" title="Dashboard v3">
-                    <span>Dashboard v3</span>
-                  </a>
-                </li>
-              </ul>
+            </li>
+            <li {{HRoute::Active('Data-User')}}>
+              <a href="{{Route('Data-User')}}">
+                <em class="icon-user"></em>
+                <span>User</span>
+              </a>
             </li>
             <li class=" ">
               <a href="widgets.html" title="Widgets">
@@ -1090,9 +1067,7 @@
     </aside>
     <section>
       <div class="content-wrapper">
-        <h3>Page title
-          <small>Subtitle</small>
-        </h3>
+        <h3>{{HRoute::Judul()}}</h3>
         @yield('content')
       </div>
     </section>
@@ -1101,5 +1076,15 @@
     </footer>
   </div>
   <script src="{{asset('js/app.js')}}"></script>
+  @if (session('alert'))
+    <script type="text/javascript">
+    notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}');
+    </script>
+  @endif
+  @if ($errors->any())
+    <script type="text/javascript">
+    notif('error', 'Error', '{{ $errors->first() }}');
+    </script>
+  @endif
 </body>
 </html>

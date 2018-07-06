@@ -44,5 +44,15 @@
     </div>
   </div>
   <script src="{{asset('js/app.js')}}"></script>
+  @if (session('alert'))
+    <script type="text/javascript">
+    notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}');
+    </script>
+  @endif
+  @if ($errors->any())
+    <script type="text/javascript">
+    notif('error', 'Error', '{{ $errors->first() }}');
+    </script>
+  @endif
 </body>
 </html>

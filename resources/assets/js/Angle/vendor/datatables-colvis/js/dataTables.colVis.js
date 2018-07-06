@@ -328,7 +328,7 @@ ColVis.prototype = {
 			this.s.restore = this.s.sRestore;
 		}
 
-		// CamelCase to Hungarian for the column groups 
+		// CamelCase to Hungarian for the column groups
 		var groups = this.s.groups;
 		var hungarianGroups = this.s.aoGroups;
 		if ( groups ) {
@@ -1107,11 +1107,11 @@ return ColVis;
 
 // Define as an AMD module if possible
 if ( typeof define === 'function' && define.amd ) {
-	define( ['jquery', 'datatables'], factory );
+	define( ['jquery', 'datatables.net'], factory );
 }
 else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    factory( require('jquery'), require('datatables') );
+    factory( require('jquery'), require('datatables.net') );
 }
 else if ( jQuery && !jQuery.fn.dataTable.ColVis ) {
 	// Otherwise simply initialise as normal, stopping multiple evaluation
@@ -1120,4 +1120,3 @@ else if ( jQuery && !jQuery.fn.dataTable.ColVis ) {
 
 
 })(window, document);
-
