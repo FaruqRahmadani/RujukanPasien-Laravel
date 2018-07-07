@@ -37,7 +37,7 @@
                     <td>{{$DataPasien->Dokter->nama}}</td>
                     <td>{{$DataPasien->keluhan}}</td>
                     <td>{{$DataPasien->diagnosa}}</td>
-                    <td>{{$DataPasien->Status}}</td>
+                    <td>{!!$DataPasien->Status!!}</td>
                     <td>
                       <a href="{{Route('Edit-Pasien', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>
