@@ -33,6 +33,14 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::POST('{id}/edit', 'DokterController@submitEdit')->name('submitEdit-Dokter');
     Route::GET('{id}/hapus', 'DokterController@Hapus')->name('Hapus-Dokter');
   });
+
+  Route::prefix('pasien')->group(function () {
+    Route::GET('', 'PasienController@Data')->name('Data-Pasien');
+    Route::GET('tambah', 'PasienController@Tambah')->name('Tambah-Pasien');
+    Route::POST('tambah', 'PasienController@submitTambah')->name('submitTambah-Pasien');
+    Route::GET('{id}/edit', 'PasienController@Edit')->name('Edit-Pasien');
+    Route::POST('{id}/edit', 'PasienController@submitEdit')->name('submitEdit-Pasien');
+  });
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

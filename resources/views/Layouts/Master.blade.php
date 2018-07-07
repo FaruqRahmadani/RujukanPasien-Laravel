@@ -170,6 +170,12 @@
                 <span>Dokter</span>
               </a>
             </li>
+            <li {{HRoute::Active('Data-Pasien')}}>
+              <a href="{{Route('Data-Pasien')}}">
+                <em class="icon-paper-clip"></em>
+                <span>Pasien</span>
+              </a>
+            </li>
             <li class=" ">
               <a href="widgets.html" title="Widgets">
                 <div class="pull-right label label-success">30</div>
@@ -1078,7 +1084,7 @@
       </nav>
     </aside>
     <section>
-      <div class="content-wrapper">
+      <div id="app" class="content-wrapper">
         <h3>{{HRoute::Judul()}}</h3>
         @yield('content')
       </div>

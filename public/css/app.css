@@ -26443,3 +26443,7 @@ fieldset[disabled] .flatdoc-wrapper .button.focus {
   border-bottom: solid 1px #d9d9d9;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+

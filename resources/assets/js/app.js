@@ -1,3 +1,5 @@
+window.Vue = require('vue');
+
 require('./bootstrap');
 
 require('./Angle/vendor/modernizr/modernizr.custom');
@@ -28,9 +30,6 @@ require('./custom');
 //
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 //
-// const app = new Vue({
-//     el: '#app'
-// });
 
 var dtInstance2 = $('#datatable2').dataTable({
         'paging':   true,  // Table pagination

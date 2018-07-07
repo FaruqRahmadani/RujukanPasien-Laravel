@@ -1,5 +1,12 @@
 import swal from 'sweetalert';
 
+Vue.component('field-kotakecamatan', require('./components/FieldDaerah-KotaKec.vue'));
+Vue.component('field-polidokter', require('./components/Field-PoliDokter.vue'));
+
+const app = new Vue({
+    el: '#app'
+});
+
 window.notif = function (tipe, judul, pesan){
   swal({
     title: judul,
