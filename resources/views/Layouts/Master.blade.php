@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,7 +96,7 @@
                 </a>
               </li>
             @endif
-            @if ((Auth::User()->tipe == 1) && (Auth::User()->tipe == 2))
+            @if ((Auth::User()->tipe == 1) || (Auth::User()->tipe == 2))
               <li {{HRoute::Active('Data-Pasien')}}>
                 <a href="{{Route('Data-Pasien')}}">
                   <em class="icon-paper-clip"></em>
@@ -124,8 +123,9 @@
             <div class="tab-pane fade in active" id="app-chat" role="tabpanel">
               <h3 class="text-center text-thin">Pasien Rujukan</h3>
               <ul class="nav">
-                <li>
-                  @foreach (HRujukan::Data() as $Index=>$DataPasien)
+                <hr>
+                @foreach (HRujukan::Data() as $Index=>$DataPasien)
+                  <li>
                     <a class="media-box p mt0" href="{{Route('Respon-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}">
                       <span class="pull-right">
                         <h4 class="btn btn-labeled btn-info btn-xs">
@@ -144,8 +144,9 @@
                         </span>
                       </span>
                     </a>
-                  @endforeach
-                </li>
+                  </li>
+                  <hr>
+                @endforeach
               </ul>
             </div>
           </div>
