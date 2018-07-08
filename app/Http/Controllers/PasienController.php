@@ -48,4 +48,11 @@ class PasienController extends Controller
 
     return redirect()->Route('Data-Pasien')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Edit']);
   }
+
+  public function Info($Id){
+    $Id = HCrypt::Decrypt($Id);
+    $Pasien = Pasien::findOrFail($Id);
+
+    return view('Pasien.Info', ['Pasien' => $Pasien]);
+  }
 }

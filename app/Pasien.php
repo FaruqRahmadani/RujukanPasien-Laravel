@@ -18,6 +18,18 @@ class Pasien extends Model
     return $this->hasOne('App\Respon');
   }
 
+  public function Pekerjaan(){
+    return $this->belongsTo('App\Pekerjaan');
+  }
+
+  public function Kota(){
+    return $this->belongsTo('App\Kota');
+  }
+
+  public function Kecamatan(){
+    return $this->belongsTo('App\Kecamatan');
+  }
+
   public function getUmurAttribute()
   {
     $Lahir = $this->tanggal_lahir;
@@ -34,6 +46,20 @@ class Pasien extends Model
     }
     if ($this->Respon->status == 0) {
       return '<span class="btn-oval btn-warning btn-sm">Ditolak</span>';
+    }
+  }
+
+  public function getMenikahTextAttribute(){
+    switch ($this->status_menikah) {
+      case 1:
+        return 'Belum Menikah';
+        break;
+      case 2:
+        return 'Sudah Menikah';
+        break;
+      default:
+        return '-';
+        break;
     }
   }
 

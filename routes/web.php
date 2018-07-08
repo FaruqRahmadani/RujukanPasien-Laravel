@@ -40,6 +40,15 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::POST('tambah', 'PasienController@submitTambah')->name('submitTambah-Pasien');
     Route::GET('{id}/edit', 'PasienController@Edit')->name('Edit-Pasien');
     Route::POST('{id}/edit', 'PasienController@submitEdit')->name('submitEdit-Pasien');
+    Route::GET('{id}/info', 'PasienController@Info')->name('Info-Pasien');
+  });
+
+  Route::prefix('rujukan')->group(function () {
+    Route::GET('', 'RujukanController@Data')->name('Data-Rujukan');
+    Route::GET('{id}/respon', 'RujukanController@Respon')->name('Respon-Rujukan');
+    Route::POST('{id}/respon', 'RujukanController@submitRespon')->name('submitRespon-Rujukan');
+    Route::GET('{id}/edit', 'RujukanController@Edit')->name('Edit-Rujukan');
+    Route::POST('{id}/edit', 'RujukanController@submitEdit')->name('submitEdit-Rujukan');
   });
 });
 

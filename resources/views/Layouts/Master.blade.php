@@ -176,6 +176,12 @@
                 <span>Pasien</span>
               </a>
             </li>
+            <li {{HRoute::Active('Data-Rujukan')}}>
+              <a href="{{Route('Data-Rujukan')}}">
+                <em class="icon-paper-clip"></em>
+                <span>Rujukan</span>
+              </a>
+            </li>
             <li class=" ">
               <a href="widgets.html" title="Widgets">
                 <div class="pull-right label label-success">30</div>
