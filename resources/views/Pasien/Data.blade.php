@@ -29,15 +29,15 @@
               <tbody>
                 @foreach ($Pasien as $Index=>$DataPasien)
                   <tr>
-                    <td>{{$Index=+1}}</td>
+                    <td>{{$Index+1}}</td>
                     <td>{{$DataPasien->nomor_rm}}</td>
                     <td>{{$DataPasien->nama}}</td>
-                    <td>{{$DataPasien->umur}}</td>
+                    <td>{{$DataPasien->umur}} Tahun</td>
                     <td>{{$DataPasien->Dokter->Spesialis->nama}}</td>
                     <td>{{$DataPasien->Dokter->nama}}</td>
                     <td>{{$DataPasien->keluhan}}</td>
                     <td>{{$DataPasien->diagnosa}}</td>
-                    <td>{!!$DataPasien->Status!!}</td>
+                    <td style="white-space: nowrap;">{!!$DataPasien->Status!!}</td>
                     <td>
                       <a href="{{Route('Edit-Pasien', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>
