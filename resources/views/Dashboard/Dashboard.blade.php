@@ -8,7 +8,7 @@
             <em class="icon-cloud-upload fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
-            <div class="h2 mt0">1700</div>
+            <div class="h2 mt0">{{HRujukan::Pasien()->count()}}</div>
             <div class="text-uppercase">Pasien</div>
           </div>
         </div>
@@ -21,9 +21,7 @@
             <em class="icon-globe fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
-            <div class="h2 mt0">700
-              <small>GB</small>
-            </div>
+            <div class="h2 mt0">{{HRujukan::Diterima()->count()}}</div>
             <div class="text-uppercase">Diterima</div>
           </div>
         </div>
@@ -36,7 +34,7 @@
             <em class="icon-bubbles fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
-            <div class="h2 mt0">500</div>
+            <div class="h2 mt0">{{HRujukan::Ditolak()->count()}}</div>
             <div class="text-uppercase">Ditolak</div>
           </div>
         </div>
@@ -49,7 +47,7 @@
             <em class="icon-bubbles fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
-            <div class="h2 mt0">500</div>
+            <div class="h2 mt0">{{HRujukan::BelumDitanggap()->count()}}</div>
             <div class="text-uppercase">Menunggu</div>
           </div>
         </div>
@@ -57,12 +55,6 @@
     </div>
     <div class="col-lg-12">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <button class="btn btn-labeled btn-success btn-sm" type="button">
-            <span class="btn-label"><i class="fa fa-plus"></i>
-            </span>Success
-          </button>
-        </div>
         <div class="panel-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
         </div>

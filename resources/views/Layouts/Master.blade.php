@@ -126,7 +126,7 @@
                 <hr>
                 @foreach (HRujukan::Data() as $Index=>$DataPasien)
                   <li>
-                    <a class="media-box p mt0" href="{{Route('Respon-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}">
+                    <a class="media-box p mt0" href="{{Auth::User()->tipe == 3 ? Route('Respon-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)]) : '#'}}">
                       <span class="pull-right">
                         <h4 class="btn btn-labeled btn-info btn-xs">
                           <span class="btn-label"><i class="fa fa-exclamation-circle"></i>
