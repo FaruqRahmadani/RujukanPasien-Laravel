@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bootstrap Admin App + jQuery">
-  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-  <title>Angle - Bootstrap Admin Template</title>
+  <title>Aplikasi Rujukan</title>
   <link rel="stylesheet" href="{{asset('css/app.css')}}" id="maincss">
 </head>
 <body>
@@ -32,14 +30,6 @@
             <button class="btn btn-block btn-primary mt-lg" type="submit">Login</button>
           </form>
         </div>
-      </div>
-      <div class="p-lg text-center">
-        <span>&copy;</span>
-        <span>2017</span>
-        <span>-</span>
-        <span>Angle</span>
-        <br>
-        <span>Bootstrap Admin Template</span>
       </div>
     </div>
   </div>

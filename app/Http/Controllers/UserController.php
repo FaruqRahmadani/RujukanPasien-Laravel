@@ -19,6 +19,9 @@ class UserController extends Controller
   }
 
   public function submitTambah(Request $request){
+    $validatedData = $request->validate([
+      'username' => 'unique:users',
+    ]);
     $User = new User;
     $User->fill($request->all());
     $User->password = bcrypt($request->password);

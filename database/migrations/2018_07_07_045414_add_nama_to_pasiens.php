@@ -25,7 +25,7 @@ class AddNamaToPasiens extends Migration
   */
   public function down()
   {
-    Schema::table('users', function($table){
+    Schema::table('pasiens', function($table){
       $table->dropColumn('nama');
     });
   }

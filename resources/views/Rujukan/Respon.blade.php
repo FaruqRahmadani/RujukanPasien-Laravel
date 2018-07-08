@@ -87,7 +87,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Catatan</label>
               <div class="col-sm-10">
-                <textarea class="form-control" name="catatan" rows="4" cols="80" required></textarea>
+                <textarea class="form-control" name="catatan" rows="4" cols="80" ></textarea>
               </div>
             </div>
             <div class="form-group">

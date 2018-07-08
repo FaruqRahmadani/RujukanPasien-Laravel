@@ -15,7 +15,7 @@ class CreateResponsTable extends Migration
   {
     Schema::create('respons', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('catatan');
+      $table->string('catatan')->nullable()->default('-');
       $table->integer('status');
       $table->integer('pasien_id');
       $table->timestamps();
