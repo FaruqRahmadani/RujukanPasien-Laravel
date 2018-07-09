@@ -47,6 +47,12 @@
                         <span class="btn-label"><i class="fa fa-info"></i>
                         </span>Info
                       </a>
+                      @if (($DataPasien->Respon) && ($DataPasien->Respon->status == 1))
+                        <a href="{{Route('Cetak-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-success btn-xs">
+                          <span class="btn-label"><i class="fa fa-print"></i>
+                          </span>Cetak
+                        </a>
+                      @endif
                     </td>
                   </tr>
                 @endforeach
