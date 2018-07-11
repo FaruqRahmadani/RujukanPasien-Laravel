@@ -22,6 +22,7 @@
                   <th>Dokter</th>
                   <th>Keluhan</th>
                   <th>Diagnosa</th>
+                  <th>Tanggal</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -37,7 +38,8 @@
                     <td>{{$DataPasien->Dokter->nama}}</td>
                     <td>{{$DataPasien->keluhan}}</td>
                     <td>{{$DataPasien->diagnosa}}</td>
-                    <td style="white-space: nowrap;">{!!$DataPasien->Status!!}</td>
+                    <td>{{HTanggal::Format($DataPasien->created_at)}}</td>
+                    <td class="text-center" style="white-space: nowrap;">{!!$DataPasien->Status!!}</td>
                     <td>
                       <a href="{{Route('Edit-Pasien', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>

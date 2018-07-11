@@ -19,15 +19,15 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Nama</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" placeholder="Nama" name="nama" required value="{{$Pasien->nama}}">
-              </div>
-            </div>
-            <div class="form-group">
               <label class="col-sm-2 control-label">Nomor Rekam Medik</label>
               <div class="col-sm-10">
                 <input class="form-control" type="text" placeholder="Nomor Rekam Medik" name="nomor_rm" required value="{{$Pasien->nomor_rm}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Nama</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="Nama" name="nama" required value="{{$Pasien->nama}}">
               </div>
             </div>
             <div class="form-group">
