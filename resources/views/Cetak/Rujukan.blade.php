@@ -38,7 +38,6 @@
     bottom: 200px;
     right: 50px;
   }
-
   </style>
 </head>
 <body>
@@ -72,55 +71,55 @@
   </table>
   <br>
   <table style="width:100%">
-    <thead>
+    <tbody>
       <tr>
-        <th>Nomor Rekam Medik</th>
-        <th>: {{$Pasien->nomor_rm}}</th>
+        <td>Nomor Rekam Medik</td>
+        <td>: {{$Pasien->nomor_rm}}</td>
       </tr>
       <tr>
-        <th>Nama</th>
-        <th>: {{$Pasien->nama}}</th>
+        <td>Nama</td>
+        <td>: {{$Pasien->nama}}</td>
       </tr>
       <tr>
-        <th>Tempat, Tanggal Lahir</th>
-        <th>: {{$Pasien->tempat_lahir}}, {{HTanggal::Format($Pasien->tanggal_lahir)}} ({{$Pasien->Umur}} Tahun)</th>
+        <td>Tempat, Tanggal Lahir</td>
+        <td>: {{$Pasien->tempat_lahir}}, {{HTanggal::Format($Pasien->tanggal_lahir)}} ({{$Pasien->Umur}} Tahun)</td>
       </tr>
       <tr>
-        <th>Alamat</th>
-        <th>: {{$Pasien->alamat}}, {{$Pasien->Kecamatan->nama}}, {{$Pasien->Kota->nama}}</th>
+        <td>Alamat</td>
+        <td>: {{$Pasien->alamat}}, {{$Pasien->Kecamatan->nama}}, {{$Pasien->Kota->nama}}</td>
       </tr>
       <tr>
-        <th>Status Menikah</th>
-        <th>: {{$Pasien->MenikahText}}</th>
+        <td>Status Menikah</td>
+        <td>: {{$Pasien->MenikahText}}</td>
       </tr>
       <tr>
-        <th>Pekerjaan</th>
-        <th>: {{$Pasien->Pekerjaan->nama}}</th>
+        <td>Pekerjaan</td>
+        <td>: {{$Pasien->Pekerjaan->nama}}</td>
       </tr>
       <tr>
-        <th><br></th>
+        <td><br></td>
       </tr>
       <tr>
-        <th>Poli</th>
-        <th>: {{$Pasien->Dokter->Spesialis->nama}}</th>
+        <td>Poli</td>
+        <td>: {{$Pasien->Dokter->Spesialis->nama}}</td>
       </tr>
       <tr>
-        <th>Dokter</th>
-        <th>: {{$Pasien->Dokter->nama}}</th>
+        <td>Dokter</td>
+        <td>: {{$Pasien->Dokter->nama}}</td>
       </tr>
       <tr>
-        <th>Keluhan</th>
-        <th>: {!!nl2br($Pasien->keluhan)!!}</th>
+        <td>Keluhan</td>
+        <td>: {!!nl2br($Pasien->keluhan)!!}</td>
       </tr>
       <tr>
-        <th>Diagnosa</th>
-        <th>: {!!nl2br($Pasien->diagnosa)!!}</th>
+        <td>Diagnosa</td>
+        <td>: {!!nl2br($Pasien->diagnosa)!!}</td>
       </tr>
       <tr>
-        <th>Telah diberikan</th>
-        <th>: {!!nl2br($Pasien->telah_diberikan)!!}</th>
+        <td>Telah diberikan</td>
+        <td>: {!!nl2br($Pasien->telah_diberikan)!!}</td>
       </tr>
-    </thead>
+    </tbody>
   </table>
   <p>Demikian disampaikan, atas pertolongan dan informasi selanjutnya untuk pasien tersebut diucapkan terimakasih</p>
   <footer>
