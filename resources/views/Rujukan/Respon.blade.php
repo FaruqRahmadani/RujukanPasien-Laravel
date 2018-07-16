@@ -29,6 +29,10 @@
                 <td>{{$Pasien->tempat_lahir}}, {{HTanggal::Format($Pasien->tanggal_lahir)}} ({{$Pasien->Umur}} Tahun)</td>
               </tr>
               <tr>
+                <td>TB / BB / Suhu Badan</td>
+                <td>{{$Pasien->tb}} cm / {{$Pasien->bb}} Kg / {{$Pasien->suhu_badan}}</td>
+              </tr>
+              <tr>
                 <td>Alamat</td>
                 <td>{{$Pasien->alamat}}, {{$Pasien->Kecamatan->nama}}, {{$Pasien->Kota->nama}}</td>
               </tr>
@@ -41,16 +45,28 @@
                 <td>{{$Pasien->Pekerjaan->nama}}</td>
               </tr>
               <tr>
-                <td>Poli</td>
-                <td>{{$Pasien->Dokter->Spesialis->nama}}</td>
+                <td>Poli Dari</td>
+                <td>{{$Pasien->PoliDari->nama}}</td>
+              </tr>
+              <tr>
+                <td>Poli Tujuan</td>
+                <td>{{$Pasien->PoliTujuan->nama}}</td>
               </tr>
               <tr>
                 <td>Dokter</td>
                 <td>{{$Pasien->Dokter->nama}}</td>
               </tr>
               <tr>
+                <td>Anamnesa</td>
+                <td>{!!nl2br($Pasien->anamnesa)!!}</td>
+              </tr>
+              <tr>
                 <td>Keluhan</td>
                 <td>{!!nl2br($Pasien->keluhan)!!}</td>
+              </tr>
+              <tr>
+                <td>Alergi</td>
+                <td>{!!nl2br($Pasien->alergi)!!}</td>
               </tr>
               <tr>
                 <td>Diagnosa</td>
