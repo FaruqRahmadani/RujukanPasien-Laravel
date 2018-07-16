@@ -15,11 +15,10 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>NIP</th>
+                  <th>NIP/NIK</th>
                   <th>Nama</th>
                   <th>Alamat</th>
                   <th>No Telp.</th>
-                  <th>Spesialis</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -31,7 +30,6 @@
                     <td>{{$DataDokter->nama}}</td>
                     <td>{{$DataDokter->alamat}}</td>
                     <td>{{$DataDokter->no_telepon}}</td>
-                    <td>{{$DataDokter->Spesialis->nama}}</td>
                     <td>
                       <a href="{{Route('Edit-Dokter', ['Id' => HCrypt::Encrypt($DataDokter->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>

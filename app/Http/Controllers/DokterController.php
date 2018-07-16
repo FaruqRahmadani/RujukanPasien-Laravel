@@ -17,8 +17,7 @@ class DokterController extends Controller
   }
 
   public function Tambah(){
-    $Spesialis = Spesialis::all();
-    return view('Dokter.Tambah', ['Spesialis' => $Spesialis]);
+    return view('Dokter.Tambah');
   }
 
   public function submitTambah(Request $request){
@@ -32,9 +31,8 @@ class DokterController extends Controller
   public function Edit($Id){
     $Id = HCrypt::Decrypt($Id);
     $Dokter = Dokter::findOrFail($Id);
-    $Spesialis = Spesialis::all();
 
-    return view('Dokter.Edit', ['Dokter' => $Dokter, 'Spesialis' => $Spesialis]);
+    return view('Dokter.Edit', ['Dokter' => $Dokter]);
   }
 
   public function submitEdit(Request $request, $Id){

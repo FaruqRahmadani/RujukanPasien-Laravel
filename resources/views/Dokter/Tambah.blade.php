@@ -13,7 +13,7 @@
           <form class="form-horizontal" action="{{Route('submitTambah-Dokter')}}" method="post">
             @csrf
             <div class="form-group">
-              <label class="col-sm-2 control-label">NIP</label>
+              <label class="col-sm-2 control-label">NIP/NIK</label>
               <div class="col-sm-10">
                 <input class="form-control" type="text" placeholder="NIP" name="nip" required>
               </div>
@@ -22,17 +22,6 @@
               <label class="col-sm-2 control-label">Nama</label>
               <div class="col-sm-10">
                 <input class="form-control" type="text" placeholder="Nama" name="nama" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Spesialis</label>
-              <div class="col-sm-10">
-                <select class="form-control" name="spesialis_id">
-                  <option selected hidden value="">Spesialis</option>
-                  @foreach ($Spesialis as $DataSpesialis)
-                    <option value="{{$DataSpesialis->id}}">{{$DataSpesialis->nama}}</option>
-                  @endforeach
-                </select>
               </div>
             </div>
             <div class="form-group">
