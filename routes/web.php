@@ -27,6 +27,15 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
       Route::GET('{id}/hapus', 'PoliDariController@Hapus')->name('Hapus-Poli-Dari');
     });
 
+    Route::prefix('poli_tujuan')->group(function () {
+      Route::GET('', 'PoliTujuanController@Data')->name('Data-Poli-Tujuan');
+      Route::GET('tambah', 'PoliTujuanController@Tambah')->name('Tambah-Poli-Tujuan');
+      Route::POST('tambah', 'PoliTujuanController@submitTambah')->name('submitTambah-Poli-Tujuan');
+      Route::GET('{id}/edit', 'PoliTujuanController@Edit')->name('Edit-Poli-Tujuan');
+      Route::POST('{id}/edit', 'PoliTujuanController@submitEdit')->name('submitEdit-Poli-Tujuan');
+      Route::GET('{id}/hapus', 'PoliTujuanController@Hapus')->name('Hapus-Poli-Tujuan');
+    });
+
     Route::prefix('dokter')->group(function () {
       Route::GET('', 'DokterController@Data')->name('Data-Dokter');
       Route::GET('tambah', 'DokterController@Tambah')->name('Tambah-Dokter');

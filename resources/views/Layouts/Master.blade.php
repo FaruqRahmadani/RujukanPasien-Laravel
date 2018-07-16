@@ -89,6 +89,12 @@
                   <span>Poli Dari</span>
                 </a>
               </li>
+              <li {{HRoute::Active('Data-Poli-Tujuan')}}>
+                <a href="{{Route('Data-Poli-Tujuan')}}">
+                  <em class="icon-layers"></em>
+                  <span>Poli Tujuan</span>
+                </a>
+              </li>
               <li {{HRoute::Active('Data-Dokter')}}>
                 <a href="{{Route('Data-Dokter')}}">
                   <em class="icon-paper-clip"></em>
