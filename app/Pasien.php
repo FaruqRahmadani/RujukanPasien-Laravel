@@ -30,6 +30,14 @@ class Pasien extends Model
     return $this->belongsTo('App\Kecamatan');
   }
 
+  public function PoliDari(){
+    return $this->belongsTo('App\PoliDari');
+  }
+
+  public function PoliTujuan(){
+    return $this->belongsTo('App\PoliTujuan');
+  }
+
   public function getUmurAttribute()
   {
     $Lahir = $this->tanggal_lahir;
