@@ -35,8 +35,8 @@
                     <td>{{$DataPasien->nomor_rm}}</td>
                     <td>{{$DataPasien->nama}}</td>
                     <td>{{$DataPasien->umur}} Tahun</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>{{$DataPasien->PoliDari->nama}}</td>
+                    <td>{{$DataPasien->PoliTujuan->nama}}</td>
                     <td>{{$DataPasien->Dokter->nama}}</td>
                     <td>{{$DataPasien->keluhan}}</td>
                     <td>{{$DataPasien->diagnosa}}</td>
