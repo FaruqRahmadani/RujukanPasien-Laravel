@@ -119,9 +119,21 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-sm-2 control-label">Anamnesa</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="anamnesa" rows="2" cols="80" required>{{$Pasien->anamnesa}}</textarea>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-sm-2 control-label">Keluhan</label>
               <div class="col-sm-10">
                 <textarea class="form-control" name="keluhan" rows="2" cols="80" required>{{$Pasien->keluhan}}</textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Alergi</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="alergi" rows="2" cols="80" required>{{$Pasien->alergi}}</textarea>
               </div>
             </div>
             <div class="form-group">
