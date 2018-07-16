@@ -4,18 +4,18 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="{{Route('Data-Spesialis')}}" class="btn btn-labeled btn-primary btn-sm" type="button">
+          <a href="{{Route('Data-Poli-Dari')}}" class="btn btn-labeled btn-primary btn-sm" type="button">
             <span class="btn-label"><i class="fa fa-angle-double-left fa-lg"></i>
             </span>Kembali
           </a>
         </div>
         <div class="panel-body">
-          <form class="form-horizontal" action="{{Route('submitTambah-Spesialis')}}" method="post">
+          <form class="form-horizontal" action="{{Route('submitEdit-Poli-Dari', ['Id' => HCrypt::Encrypt($PoliDari->id)])}}" method="post">
             @csrf
             <div class="form-group">
               <label class="col-sm-2 control-label">Nama</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" placeholder="Nama" name="nama" required>
+                <input class="form-control" type="text" placeholder="Nama" name="nama" value="{{$PoliDari->nama}}" required>
               </div>
             </div>
             <div class="form-group">

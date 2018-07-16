@@ -83,10 +83,10 @@
                   <span>User</span>
                 </a>
               </li>
-              <li {{HRoute::Active('Data-Spesialis')}}>
-                <a href="{{Route('Data-Spesialis')}}">
+              <li {{HRoute::Active('Data-Poli-Dari')}}>
+                <a href="{{Route('Data-Poli-Dari')}}">
                   <em class="icon-layers"></em>
-                  <span>Spesialis</span>
+                  <span>Poli Dari</span>
                 </a>
               </li>
               <li {{HRoute::Active('Data-Dokter')}}>
@@ -140,7 +140,7 @@
                         <span class="media-box-heading">
                           <strong>{{$DataPasien->nama}}</strong>
                           <br>
-                          <small class="text-muted">Poli {{$DataPasien->Dokter->Spesialis->nama}}</small>
+                          <small class="text-muted"> {{HTanggal::Format($DataPasien->created_at)}}</small>
                         </span>
                       </span>
                     </a>

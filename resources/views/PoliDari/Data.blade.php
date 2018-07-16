@@ -4,7 +4,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="{{Route('Tambah-Spesialis')}}" class="btn btn-labeled btn-success btn-sm" type="button">
+          <a href="{{Route('Tambah-Poli-Dari')}}" class="btn btn-labeled btn-success btn-sm" type="button">
             <span class="btn-label"><i class="fa fa-plus"></i>
             </span>Tambah
           </a>
@@ -20,16 +20,16 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($Spesialis as $Index=>$DataSpesialis)
+                @foreach ($PoliDari as $Index=>$DataPoliDari)
                   <tr>
                     <td>{{$Index+=1}}</td>
-                    <td>{{$DataSpesialis->nama}}</td>
+                    <td>{{$DataPoliDari->nama}}</td>
                     <td>
-                      <a href="{{Route('Edit-Spesialis', ['Id' => HCrypt::Encrypt($DataSpesialis->id)])}}" class="btn btn-labeled btn-info btn-xs">
+                      <a href="{{Route('Edit-Poli-Dari', ['Id' => HCrypt::Encrypt($DataPoliDari->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>
                         </span>Edit
                       </a>
-                      <button class="btn btn-labeled btn-danger btn-xs" onclick="hapus('{{Route('Hapus-Spesialis', ['Id' => HCrypt::Encrypt($DataSpesialis->id)])}}')">
+                      <button class="btn btn-labeled btn-danger btn-xs" onclick="hapus('{{Route('Hapus-Poli-Dari', ['Id' => HCrypt::Encrypt($DataPoliDari->id)])}}')">
                         <span class="btn-label"><i class="fa fa-close"></i>
                         </span>Hapus
                       </button>

@@ -18,13 +18,13 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     });
 
 
-    Route::prefix('spesialis')->group(function () {
-      Route::GET('', 'SpesialisController@Data')->name('Data-Spesialis');
-      Route::GET('tambah', 'SpesialisController@Tambah')->name('Tambah-Spesialis');
-      Route::POST('tambah', 'SpesialisController@submitTambah')->name('submitTambah-Spesialis');
-      Route::GET('{id}/edit', 'SpesialisController@Edit')->name('Edit-Spesialis');
-      Route::POST('{id}/edit', 'SpesialisController@submitEdit')->name('submitEdit-Spesialis');
-      Route::GET('{id}/hapus', 'SpesialisController@Hapus')->name('Hapus-Spesialis');
+    Route::prefix('poli_dari')->group(function () {
+      Route::GET('', 'PoliDariController@Data')->name('Data-Poli-Dari');
+      Route::GET('tambah', 'PoliDariController@Tambah')->name('Tambah-Poli-Dari');
+      Route::POST('tambah', 'PoliDariController@submitTambah')->name('submitTambah-Poli-Dari');
+      Route::GET('{id}/edit', 'PoliDariController@Edit')->name('Edit-Poli-Dari');
+      Route::POST('{id}/edit', 'PoliDariController@submitEdit')->name('submitEdit-Poli-Dari');
+      Route::GET('{id}/hapus', 'PoliDariController@Hapus')->name('Hapus-Poli-Dari');
     });
 
     Route::prefix('dokter')->group(function () {
