@@ -42,7 +42,7 @@
             </tr>
             <tr>
               <td>TB / BB / Suhu Badan</td>
-              <td>{{$Pasien->tb}} m / {{$Pasien->bb}} Kg / {{$Pasien->suhu_badan}}</td>
+              <td>{{$Pasien->tb}} cm / {{$Pasien->bb}} Kg / {{$Pasien->suhu_badan}}</td>
             </tr>
             <tr>
               <td>Alamat</td>

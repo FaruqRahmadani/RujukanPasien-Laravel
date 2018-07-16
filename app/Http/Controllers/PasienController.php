@@ -29,7 +29,6 @@ class PasienController extends Controller
 
   public function submitTambah(Request $request){
     $Pasien = new Pasien;
-    // dd($request->all());
     $Pasien->fill($request->all());
     $Pasien->save();
 
@@ -39,10 +38,12 @@ class PasienController extends Controller
   public function Edit($Id){
     $Dokter = Dokter::all();
     $Pekerjaan = Pekerjaan::all();
+    $PoliDari = PoliDari::all();
+    $PoliTujuan = PoliTujuan::all();
     $Id = HCrypt::Decrypt($Id);
     $Pasien = Pasien::findOrFail($Id);
 
-    return view('Pasien.Edit', ['Pasien' => $Pasien, 'Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan]);
+    return view('Pasien.Edit', ['Pasien' => $Pasien, 'Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan]);
   }
 
   public function submitEdit(Request $request, $Id){

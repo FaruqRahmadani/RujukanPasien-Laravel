@@ -52,6 +52,20 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-sm-2 control-label">TB/BB/Suhu Badan</label>
+              <div class="col-sm-10 no-padding">
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="TB" name="tb" required value="{{$Pasien->tb}}">
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="BB" name="bb" required value="{{$Pasien->bb}}">
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="Suhu Badan" name="suhu_badan" required value="{{$Pasien->suhu_badan}}">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-sm-2 control-label">Status Menikah</label>
               <div class="col-sm-10">
                 <select class="form-control" name="status_menikah" required>
@@ -72,10 +86,38 @@
                 </select>
               </div>
             </div>
-            <field-polidokter
-              Poli = {{$Pasien->Dokter->spesialis_id}}
-              Dokter = {{$Pasien->dokter_id}}
-            ></field-polidokter>
+            <hr>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Poli Dari</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="poli_dari_id" required>
+                  @foreach ($PoliDari as $DataPoliDari)
+                    <option value="{{$DataPoliDari->id}}" {{$DataPoliDari->id == $Pasien->poli_dari_id ? 'selected' : ''}}>{{$DataPoliDari->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Poli Tujuan</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="poli_tujuan_id" required>
+                  <option value="" selected hidden>Poli Tujuan</option>
+                  @foreach ($PoliTujuan as $DataPoliTujuan)
+                    <option value="{{$DataPoliTujuan->id}}" {{$DataPoliTujuan->id == $Pasien->poli_tujuan_id ? 'selected' : ''}}>{{$DataPoliTujuan->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Dokter</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="dokter_id" required>
+                  @foreach ($Dokter as $DataDokter)
+                    <option value="{{$DataDokter->id}}" {{$DataDokter->id == $Pasien->dokter_id ? 'selected' : ''}}>{{$DataDokter->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">Keluhan</label>
               <div class="col-sm-10">
