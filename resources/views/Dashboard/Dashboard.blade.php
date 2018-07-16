@@ -5,7 +5,7 @@
       <div class="panel widget bg-primary">
         <div class="row row-table">
           <div class="col-xs-4 text-center bg-primary-dark pv-lg">
-            <em class="icon-cloud-upload fa-3x"></em>
+            <em class="icon-people fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
             <div class="h2 mt0">{{HRujukan::Pasien()->count()}}</div>
@@ -18,7 +18,7 @@
       <div class="panel widget bg-purple">
         <div class="row row-table">
           <div class="col-xs-4 text-center bg-purple-dark pv-lg">
-            <em class="icon-globe fa-3x"></em>
+            <em class="icon-user-following fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
             <div class="h2 mt0">{{HRujukan::Diterima()->count()}}</div>
@@ -31,7 +31,7 @@
       <div class="panel widget bg-info">
         <div class="row row-table">
           <div class="col-xs-4 text-center bg-info-dark pv-lg">
-            <em class="icon-bubbles fa-3x"></em>
+            <em class="icon-user-unfollow fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
             <div class="h2 mt0">{{HRujukan::Ditolak()->count()}}</div>
@@ -44,7 +44,7 @@
       <div class="panel widget bg-green">
         <div class="row row-table">
           <div class="col-xs-4 text-center bg-green-dark pv-lg">
-            <em class="icon-bubbles fa-3x"></em>
+            <em class="icon-options fa-3x"></em>
           </div>
           <div class="col-xs-8 pv-lg">
             <div class="h2 mt0">{{HRujukan::BelumDitanggap()->count()}}</div>
