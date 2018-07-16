@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Pasien extends Model
 {
-  protected $fillable = ['nomor', 'nama', 'nomor_rm', 'alamat', 'kota_id', 'kecamatan_id', 'tempat_lahir', 'tanggal_lahir', 'status_menikah', 'pekerjaan_id', 'keluhan', 'diagnosa', 'telah_diberikan', 'dokter_id'];
+  protected $fillable = ['nomor', 'nama', 'nomor_rm', 'alamat', 'kota_id', 'kecamatan_id', 'tempat_lahir', 'tanggal_lahir', 'tb', 'bb', 'suhu_badan', 'status_menikah', 'pekerjaan_id', 'keluhan', 'diagnosa', 'telah_diberikan', 'anamnesa', 'alergi', 'dokter_id', 'poli_dari_id', 'poli_tujuan_id'];
 
   public function Dokter(){
     return $this->belongsTo('App\Dokter')->withTrashed();

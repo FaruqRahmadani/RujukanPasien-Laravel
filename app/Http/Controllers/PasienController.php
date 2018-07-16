@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use HCrypt;
 
+use App\PoliTujuan;
 use App\Pekerjaan;
+use App\PoliDari;
 use App\Pasien;
 use App\Dokter;
 
@@ -20,11 +22,14 @@ class PasienController extends Controller
   public function Tambah(){
     $Dokter = Dokter::all();
     $Pekerjaan = Pekerjaan::all();
-    return view('Pasien.Tambah', ['Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan]);
+    $PoliDari = PoliDari::all();
+    $PoliTujuan = PoliTujuan::all();
+    return view('Pasien.Tambah', ['Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan]);
   }
 
   public function submitTambah(Request $request){
     $Pasien = new Pasien;
+    // dd($request->all());
     $Pasien->fill($request->all());
     $Pasien->save();
 

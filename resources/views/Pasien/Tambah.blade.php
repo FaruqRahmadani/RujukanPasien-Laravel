@@ -49,6 +49,20 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-sm-2 control-label">TB/BB/Suhu Badan</label>
+              <div class="col-sm-10 no-padding">
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="TB" name="tb" required>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="BB" name="bb" required>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" type="text" placeholder="Suhu Badan" name="suhu_badan" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-sm-2 control-label">Status Menikah</label>
               <div class="col-sm-10">
                 <select class="form-control" name="status_menikah" required>
@@ -69,11 +83,56 @@
                 </select>
               </div>
             </div>
-            <field-polidokter></field-polidokter>
+            <hr>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Poli Dari</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="poli_dari_id" required>
+                  <option value="" selected hidden>Poli Dari</option>
+                  @foreach ($PoliDari as $DataPoliDari)
+                    <option value="{{$DataPoliDari->id}}">{{$DataPoliDari->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Poli Tujuan</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="poli_tujuan_id" required>
+                  <option value="" selected hidden>Poli Tujuan</option>
+                  @foreach ($PoliTujuan as $DataPoliTujuan)
+                    <option value="{{$DataPoliTujuan->id}}">{{$DataPoliTujuan->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Dokter</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="dokter_id" required>
+                  <option value="" selected hidden>Dokter</option>
+                  @foreach ($Dokter as $DataDokter)
+                    <option value="{{$DataDokter->id}}">{{$DataDokter->nama}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Anamnesa</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="anamnesa" rows="2" cols="80" required></textarea>
+              </div>
+            </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">Keluhan</label>
               <div class="col-sm-10">
                 <textarea class="form-control" name="keluhan" rows="2" cols="80" required></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Alergi</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="alergi" rows="2" cols="80" required></textarea>
               </div>
             </div>
             <div class="form-group">
