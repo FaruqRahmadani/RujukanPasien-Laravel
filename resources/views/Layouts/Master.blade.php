@@ -83,6 +83,12 @@
                   <span>User</span>
                 </a>
               </li>
+              <li {{HRoute::Active('Data-Diagnosa')}}>
+                <a href="{{Route('Data-Diagnosa')}}">
+                  <em class="icon-user"></em>
+                  <span>Diagnosa</span>
+                </a>
+              </li>
               <li {{HRoute::Active('Data-Poli-Dari')}}>
                 <a href="{{Route('Data-Poli-Dari')}}">
                   <em class="icon-layers"></em>
