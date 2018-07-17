@@ -40,4 +40,12 @@ class DiagnosaController extends Controller
 
     return redirect()->Route('Data-Diagnosa')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Edit']);
   }
+
+  public function Hapus($Id){
+    $Id = HCrypt::Decrypt($Id);
+    $Diagnosa = Diagnosa::findOrFail($Id);
+    $Diagnosa->delete();
+
+    return redirect()->Route('Data-Diagnosa')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Hapus']);
+  }
 }
