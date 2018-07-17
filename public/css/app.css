@@ -26447,3 +26447,8 @@ fieldset[disabled] .flatdoc-wrapper .button.focus {
   padding: 0 !important;
 }
 
+.table-nowrap thead,
+.table-nowrap tbody {
+  white-space: nowrap !important;
+}
+

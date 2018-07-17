@@ -11,7 +11,7 @@
         </div>
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-striped table-hover" id="datatable2">
+            <table class="table table-striped table-hover table-nowrap" id="datatable2">
               <thead>
                 <tr>
                   <th>#</th>
@@ -44,7 +44,7 @@
                     <td class="text-center" style="white-space: nowrap;">{!!$DataPasien->Status!!}</td>
                     <td>
                       @if (($DataPasien->Respon) && ($DataPasien->Respon->status == 1))
-                        <a href="{{Route('Cetak-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-success btn-xs">
+                        <a href="{{Route('Cetak-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)])}}" class="btn btn-labeled btn-success btn-xs" target="_blank">
                           <span class="btn-label"><i class="fa fa-print"></i>
                           </span>Cetak
                         </a>
