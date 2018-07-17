@@ -138,7 +138,12 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">Diagnosa</label>
               <div class="col-sm-10">
-                <textarea class="form-control" name="diagnosa" rows="2" cols="80" required></textarea>
+                <select class="form-control" name="diagnosa_id" required>
+                  <option value="" selected hidden>Diagnosa</option>
+                  @foreach ($Diagnosa as $DataDiagnosa)
+                    <option value="{{$DataDiagnosa->id}}">{{$DataDiagnosa->kode}}</option>
+                  @endforeach
+                </select>
               </div>
             </div>
             <div class="form-group">

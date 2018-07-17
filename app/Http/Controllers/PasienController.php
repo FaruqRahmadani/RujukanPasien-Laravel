@@ -9,6 +9,7 @@ use HCrypt;
 use App\PoliTujuan;
 use App\Pekerjaan;
 use App\PoliDari;
+use App\Diagnosa;
 use App\Pasien;
 use App\Dokter;
 
@@ -21,10 +22,11 @@ class PasienController extends Controller
 
   public function Tambah(){
     $Dokter = Dokter::all();
-    $Pekerjaan = Pekerjaan::all();
     $PoliDari = PoliDari::all();
+    $Diagnosa = Diagnosa::all();
+    $Pekerjaan = Pekerjaan::all();
     $PoliTujuan = PoliTujuan::all();
-    return view('Pasien.Tambah', ['Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan]);
+    return view('Pasien.Tambah', ['Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan, 'Diagnosa' => $Diagnosa]);
   }
 
   public function submitTambah(Request $request){
@@ -37,13 +39,14 @@ class PasienController extends Controller
 
   public function Edit($Id){
     $Dokter = Dokter::all();
-    $Pekerjaan = Pekerjaan::all();
     $PoliDari = PoliDari::all();
+    $Diagnosa = Diagnosa::all();
+    $Pekerjaan = Pekerjaan::all();
     $PoliTujuan = PoliTujuan::all();
     $Id = HCrypt::Decrypt($Id);
     $Pasien = Pasien::findOrFail($Id);
 
-    return view('Pasien.Edit', ['Pasien' => $Pasien, 'Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan]);
+    return view('Pasien.Edit', ['Pasien' => $Pasien, 'Dokter' => $Dokter, 'Pekerjaan' => $Pekerjaan, 'PoliDari' => $PoliDari, 'PoliTujuan' => $PoliTujuan, 'Diagnosa' => $Diagnosa]);
   }
 
   public function submitEdit(Request $request, $Id){

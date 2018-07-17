@@ -39,7 +39,7 @@
                     <td>{{$DataPasien->PoliTujuan->nama}}</td>
                     <td>{{$DataPasien->Dokter->nama}}</td>
                     <td>{{$DataPasien->keluhan}}</td>
-                    <td>{{$DataPasien->diagnosa}}</td>
+                    <td>{{$DataPasien->Diagnosa->kode}}</td>
                     <td>{{HTanggal::Format($DataPasien->created_at)}}</td>
                     <td class="text-center" style="white-space: nowrap;">{!!$DataPasien->Status!!}</td>
                     <td>
