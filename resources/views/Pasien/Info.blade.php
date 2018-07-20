@@ -82,7 +82,7 @@
             </tr>
             <tr>
               <td>Diagnosa</td>
-              <td>{!!nl2br($Pasien->diagnosa)!!}</td>
+              <td>{{$Pasien->Diagnosa->kode}} - {{$Pasien->Diagnosa->keterangan}}</td>
             </tr>
             <tr>
               <td>Telah diberikan</td>
