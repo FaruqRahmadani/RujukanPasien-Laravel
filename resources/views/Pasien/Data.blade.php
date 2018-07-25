@@ -1,6 +1,7 @@
 @extends('Layouts.Master')
 @section('content')
-  <h3>{{HRoute::Judul()}}</h3>
+  <h3>Puskesmas Guntung Payung Banjarbaru
+  <small>{{HRoute::Judul()}}</small></h3>
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
