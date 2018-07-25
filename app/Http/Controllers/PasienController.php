@@ -16,7 +16,7 @@ use App\Dokter;
 class PasienController extends Controller
 {
   public function Data(){
-    $Pasien = Pasien::all();
+    $Pasien = Pasien::orderBy('id', 'desc')->get();
     return view('Pasien.Data', ['Pasien' => $Pasien]);
   }
 

@@ -62,7 +62,6 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
       Route::GET('{id}/edit', 'PasienController@Edit')->name('Edit-Pasien');
       Route::POST('{id}/edit', 'PasienController@submitEdit')->name('submitEdit-Pasien');
       Route::GET('{id}/info', 'PasienController@Info')->name('Info-Pasien');
-      Route::GET('{id}/cetak', 'CetakController@Rujukan')->name('Cetak-Rujukan');
     });
   });
 
@@ -73,8 +72,10 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
       Route::POST('{id}/respon', 'RujukanController@submitRespon')->name('submitRespon-Rujukan');
       Route::GET('{id}/edit', 'RujukanController@Edit')->name('Edit-Rujukan');
       Route::POST('{id}/edit', 'RujukanController@submitEdit')->name('submitEdit-Rujukan');
+      Route::GET('redirect/{id}', 'RujukanController@Redirect');
     });
   });
+  Route::GET('pasien/{id}/cetak', 'CetakController@Rujukan')->name('Cetak-Rujukan');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

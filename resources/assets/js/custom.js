@@ -2,6 +2,7 @@ import swal from 'sweetalert';
 
 Vue.component('field-kotakecamatan', require('./components/FieldDaerah-KotaKec.vue'));
 Vue.component('field-polidokter', require('./components/Field-PoliDokter.vue'));
+Vue.component('notif', require('./components/Notif.vue'));
 
 const app = new Vue({
     el: '#app'

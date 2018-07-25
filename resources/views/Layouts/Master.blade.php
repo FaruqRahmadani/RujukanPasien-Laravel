@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="app">
     <header class="topnavbar-wrapper">
       <nav class="navbar topnavbar" role="navigation">
         <div class="navbar-header">
@@ -35,12 +35,9 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown dropdown-list">
-              <a href="#" data-toggle="dropdown" data-toggle-state="offsidebar-open" data-no-persist="true">
-                <em class="icon-bell"></em>
-                <div class="label label-danger">{{HRujukan::Count()}}</div>
-              </a>
-            </li>
+            @if (Auth::User()->tipe == 3)
+              <notif show="button"></notif>
+            @endif
             <li>
               <a href="#" data-toggle-fullscreen="" onclick="logout()">
                 <em class="fa fa-power-off"></em>
@@ -128,46 +125,11 @@
         </nav>
       </div>
     </aside>
-    <aside class="offsidebar hide">
-      <nav>
-        <div role="tabpanel">
-          <div class="tab-content">
-            <div class="tab-pane fade in active" id="app-chat" role="tabpanel">
-              <h3 class="text-center text-thin">Pasien Rujukan</h3>
-              <ul class="nav">
-                <hr>
-                @foreach (HRujukan::Data() as $Index=>$DataPasien)
-                  <li>
-                    <a class="media-box p mt0" href="{{Auth::User()->tipe == 3 ? Route('Respon-Rujukan', ['Id' => HCrypt::Encrypt($DataPasien->id)]) : '#'}}">
-                      <span class="pull-right">
-                        <h4 class="btn btn-labeled btn-info btn-xs">
-                          <span class="btn-label"><i class="fa fa-exclamation-circle"></i>
-                          </span>Respon
-                        </h4>
-                      </span>
-                      <span class="pull-left">
-                        <h4>{{$Index+=1}}</h4>
-                      </span>
-                      <span class="media-box-body">
-                        <span class="media-box-heading">
-                          <strong>{{$DataPasien->nama}}</strong>
-                          <br>
-                          <small class="text-muted"> {{HTanggal::Format($DataPasien->created_at)}}</small>
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                  <hr>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </aside>
+    @if (Auth::User()->tipe == 3)
+      <notif show="panel"></notif>
+    @endif
     <section>
-      <div id="app" class="content-wrapper">
-        <h3>{{HRoute::Judul()}}</h3>
+      <div class="content-wrapper">
         @yield('content')
       </div>
     </section>

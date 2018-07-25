@@ -1,8 +1,8 @@
 @extends('Layouts.Master')
 @section('content')
+  <h3>{{HRoute::Judul()}}</h3>
   <div class="row">
     <div class="col-lg-12">
-
       <div class="panel panel-default" id="panelDemo1">
         <div class="panel-heading panel-heading-collapsed">Info Pasien
           <a class="pull-right" href="#" data-tool="panel-collapse" data-toggle="tooltip" title="" data-original-title="Collapse Panel" aria-describedby="tooltip519947">
@@ -70,7 +70,7 @@
               </tr>
               <tr>
                 <td>Diagnosa</td>
-                <td>{!!nl2br($Pasien->diagnosa)!!}</td>
+                <td>{{$Pasien->Diagnosa->kode}} - {{$Pasien->Diagnosa->keterangan}}</td>
               </tr>
               <tr>
                 <td>Telah diberikan</td>

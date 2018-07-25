@@ -12,7 +12,7 @@ use App\Respon;
 class RujukanController extends Controller
 {
   public function Data(){
-    $Pasien = Pasien::doesntHave('respon')->get();
+    $Pasien = Pasien::orderBy('id', 'desc')->get();
 
     return view('Rujukan.Data', ['Pasien' => $Pasien]);
   }
@@ -32,5 +32,10 @@ class RujukanController extends Controller
     $Respon->save();
 
     return redirect()->Route('Data-Rujukan')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Respon berhasil dikirimkan']);
+  }
+
+  public function Redirect($Id){
+    $Id = HCrypt::Encrypt($Id);
+    return redirect()->route('Respon-Rujukan', ['Id' => $Id]);
   }
 }
