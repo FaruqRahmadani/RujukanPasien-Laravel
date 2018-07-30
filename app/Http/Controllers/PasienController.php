@@ -13,12 +13,13 @@ use App\Diagnosa;
 use App\Pasien;
 use App\Dokter;
 use App\Respon;
+use PDF;
 
 class PasienController extends Controller
 {
   public function Data(){
     $Pasien = Pasien::orderBy('id', 'desc')->get();
-    return view('Pasien.Data', ['Pasien' => $Pasien]);
+    return view('Pasien.Data', ['Pasien' => $Pasien, 'Filter' => 'Semua']);
   }
 
   public function DataFilter(Request $request){
@@ -31,7 +32,21 @@ class PasienController extends Controller
       $Pasien = Pasien::whereIn('id', $PasienId)->get();
     }
 
-    return view('Pasien.Data', ['Pasien' => $Pasien]);
+    return view('Pasien.Data', ['Pasien' => $Pasien, 'Filter' => $request->filter]);
+  }
+
+  public function Cetak($Filter){
+    if ($Filter == "Semua") {
+      $Pasien = Pasien::all();
+    }else if ($Filter == "Menunggu") {
+      $Pasien = Pasien::doesnthave('Respon')->get();
+    }else{
+      $PasienId = Respon::where('status', $Filter)->pluck('id');
+      $Pasien = Pasien::whereIn('id', $PasienId)->get();
+    }
+
+    $pdf = PDF::loadview('Cetak.DataPasien', ['Pasien' => $Pasien]);
+    return $pdf->setPaper('a4', 'landscape')->stream();
   }
 
   public function Tambah(){

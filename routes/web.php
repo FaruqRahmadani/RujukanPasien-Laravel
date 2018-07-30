@@ -63,6 +63,7 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
       Route::GET('{id}/edit', 'PasienController@Edit')->name('Edit-Pasien');
       Route::POST('{id}/edit', 'PasienController@submitEdit')->name('submitEdit-Pasien');
       Route::GET('{id}/info', 'PasienController@Info')->name('Info-Pasien');
+      Route::GET('cetak/{status?}', 'PasienController@Cetak')->name('Cetak-Pasien');
     });
   });
 

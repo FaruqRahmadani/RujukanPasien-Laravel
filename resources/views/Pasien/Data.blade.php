@@ -12,7 +12,7 @@
                     <span class="btn-label"><i class="fa fa-plus"></i>
                     </span>Tambah
                   </a>
-                  <a href="{{Route('Tambah-Pasien')}}" class="btn btn-labeled btn-info btn-sm" type="button">
+                  <a href="{{Route('Cetak-Pasien', ['Status' => $Filter])}}" target="_blank" class="btn btn-labeled btn-info btn-sm" type="button">
                     <span class="btn-label"><i class="fa fa-print"></i>
                     </span>Cetak
                   </a>
@@ -23,10 +23,10 @@
                   <div class="col-lg-8 col-xs-8 no-padding">
                     <select class="form-control" name="filter" required>
                       <option value="" selected hidden>Filter Status</option>
-                      <option value="Semua">Semua</option>
-                      <option value="Menunggu">Menunggu</option>
-                      <option value="1">Diterima</option>
-                      <option value="0">Ditolak</option>
+                      <option value="Semua" {{(isset($Filter)) && ($Filter == "Semua") ? 'selected' : ''}}>Semua</option>
+                      <option value="Menunggu" {{(isset($Filter)) && ($Filter == "Menunggu") ? 'selected' : ''}}>Menunggu</option>
+                      <option value="1" {{(isset($Filter)) && ($Filter == "1") ? 'selected' : ''}}>Diterima</option>
+                      <option value="0" {{(isset($Filter)) && ($Filter == "0") ? 'selected' : ''}}>Ditolak</option>
                     </select>
                   </div>
                   <div class="col-lg-4 col-xs-4">
