@@ -26447,6 +26447,12 @@ fieldset[disabled] .flatdoc-wrapper .button.focus {
   padding: 0 !important;
 }
 
+@media screen and (max-width: 480px) {
+  .bottom-padding {
+    padding-bottom: 15px !important;
+  }
+}
+
 .table-nowrap thead,
 .table-nowrap tbody {
   white-space: nowrap !important;

@@ -12,11 +12,25 @@ use App\PoliDari;
 use App\Diagnosa;
 use App\Pasien;
 use App\Dokter;
+use App\Respon;
 
 class PasienController extends Controller
 {
   public function Data(){
     $Pasien = Pasien::orderBy('id', 'desc')->get();
+    return view('Pasien.Data', ['Pasien' => $Pasien]);
+  }
+
+  public function DataFilter(Request $request){
+    if ($request->filter == "Semua") {
+      $Pasien = Pasien::all();
+    }else if ($request->filter == "Menunggu") {
+      $Pasien = Pasien::doesnthave('Respon')->get();
+    }else{
+      $PasienId = Respon::where('status', $request->filter)->pluck('id');
+      $Pasien = Pasien::whereIn('id', $PasienId)->get();
+    }
+
     return view('Pasien.Data', ['Pasien' => $Pasien]);
   }
 

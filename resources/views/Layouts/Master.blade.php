@@ -56,7 +56,7 @@
                 <div class="item user-block">
                   <div class="user-block-picture">
                     <div class="user-block-status">
-                      <img class="img-thumbnail img-circle" src="{{asset('img/user/'.Auth::User()->foto)}}" alt="Avatar" width="60" height="60">
+                      <img class="img-thumbnail img-circle" src="{{asset('img/user/'.(Auth::User()->tipe == 3 ? 'rs.jpeg' : 'default.png'))}}" alt="Avatar" width="60" height="60">
                       <div class="circle circle-success circle-lg"></div>
                     </div>
                   </div>

@@ -57,6 +57,7 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
   Route::group(['middleware' => ['PuskesMiddleware']], function () {
     Route::prefix('pasien')->group(function () {
       Route::GET('', 'PasienController@Data')->name('Data-Pasien');
+      Route::POST('', 'PasienController@DataFilter')->name('Data-Pasien-Filter');
       Route::GET('tambah', 'PasienController@Tambah')->name('Tambah-Pasien');
       Route::POST('tambah', 'PasienController@submitTambah')->name('submitTambah-Pasien');
       Route::GET('{id}/edit', 'PasienController@Edit')->name('Edit-Pasien');
