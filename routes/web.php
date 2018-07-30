@@ -70,11 +70,13 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
   Route::group(['middleware' => ['RSMiddleware']], function () {
     Route::prefix('rujukan')->group(function () {
       Route::GET('', 'RujukanController@Data')->name('Data-Rujukan');
+      Route::POST('', 'RujukanController@DataFilter')->name('Data-Rujukan-Filter');
       Route::GET('{id}/respon', 'RujukanController@Respon')->name('Respon-Rujukan');
       Route::POST('{id}/respon', 'RujukanController@submitRespon')->name('submitRespon-Rujukan');
       Route::GET('{id}/edit', 'RujukanController@Edit')->name('Edit-Rujukan');
       Route::POST('{id}/edit', 'RujukanController@submitEdit')->name('submitEdit-Rujukan');
       Route::GET('redirect/{id}', 'RujukanController@Redirect');
+      Route::GET('cetak/{status?}', 'RujukanController@Cetak')->name('Cetak-DataRujukan');
     });
   });
   Route::GET('pasien/{id}/cetak', 'CetakController@Rujukan')->name('Cetak-Rujukan');

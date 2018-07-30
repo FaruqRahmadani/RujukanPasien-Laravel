@@ -5,6 +5,36 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-lg-6 bottom-padding">
+                <a href="{{Route('Cetak-DataRujukan', ['Status' => $Filter])}}" target="_blank" class="btn btn-labeled btn-info btn-sm" type="button">
+                  <span class="btn-label"><i class="fa fa-print"></i>
+                  </span>Cetak
+                </a>
+            </div>
+            <form class="form-horizontal" action="{{Route('Data-Rujukan-Filter')}}" method="POST">
+              @csrf
+              <div class="col-lg-6">
+                <div class="col-lg-8 col-xs-8 no-padding">
+                  <select class="form-control" name="filter" required>
+                    <option value="" selected hidden>Filter Status</option>
+                    <option value="Semua" {{(isset($Filter)) && ($Filter == "Semua") ? 'selected' : ''}}>Semua</option>
+                    <option value="Menunggu" {{(isset($Filter)) && ($Filter == "Menunggu") ? 'selected' : ''}}>Menunggu</option>
+                    <option value="1" {{(isset($Filter)) && ($Filter == "1") ? 'selected' : ''}}>Diterima</option>
+                    <option value="0" {{(isset($Filter)) && ($Filter == "0") ? 'selected' : ''}}>Ditolak</option>
+                  </select>
+                </div>
+                <div class="col-lg-4 col-xs-4">
+                  <button type="submit" class="btn btn-labeled btn-info btn-sm">
+                    <span class="btn-label"><i class="fa fa-filter"></i>
+                    </span>Filter
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
         <div class="panel-body">
           <div class="table-responsive">
             <table class="table table-striped table-hover" id="datatable2">

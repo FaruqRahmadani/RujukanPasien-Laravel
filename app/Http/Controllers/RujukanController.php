@@ -8,13 +8,41 @@ use HCrypt;
 
 use App\Pasien;
 use App\Respon;
+use PDF;
 
 class RujukanController extends Controller
 {
   public function Data(){
     $Pasien = Pasien::orderBy('id', 'desc')->get();
 
-    return view('Rujukan.Data', ['Pasien' => $Pasien]);
+    return view('Rujukan.Data', ['Pasien' => $Pasien, 'Filter' => 'Semua']);
+  }
+
+  public function DataFilter(Request $request){
+    if ($request->filter == "Semua") {
+      $Pasien = Pasien::all();
+    }else if ($request->filter == "Menunggu") {
+      $Pasien = Pasien::doesnthave('Respon')->get();
+    }else{
+      $PasienId = Respon::where('status', $request->filter)->pluck('id');
+      $Pasien = Pasien::whereIn('id', $PasienId)->get();
+    }
+
+    return view('Rujukan.Data', ['Pasien' => $Pasien, 'Filter' => $request->filter]);
+  }
+
+  public function Cetak($Filter){
+    if ($Filter == "Semua") {
+      $Pasien = Pasien::all();
+    }else if ($Filter == "Menunggu") {
+      $Pasien = Pasien::doesnthave('Respon')->get();
+    }else{
+      $PasienId = Respon::where('status', $Filter)->pluck('id');
+      $Pasien = Pasien::whereIn('id', $PasienId)->get();
+    }
+
+    $pdf = PDF::loadview('Cetak.DataPasien', ['Pasien' => $Pasien]);
+    return $pdf->setPaper('a4', 'landscape')->stream();
   }
 
   public function Respon($Id){

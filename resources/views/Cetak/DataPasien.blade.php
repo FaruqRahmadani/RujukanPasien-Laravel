@@ -60,6 +60,7 @@
     </tr>
   </table>
   <hr>
+    <h3 align="center">Data Pasien</h3>
   <table class="tabel-isi" style="width:100%">
     <thead>
       <tr>
