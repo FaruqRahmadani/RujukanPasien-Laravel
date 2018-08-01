@@ -27,21 +27,21 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     });
 
     Route::prefix('poli_dari')->group(function () {
-      Route::GET('', 'PoliDariController@Data')->name('Data-Poli-Dari');
-      Route::GET('tambah', 'PoliDariController@Tambah')->name('Tambah-Poli-Dari');
-      Route::POST('tambah', 'PoliDariController@submitTambah')->name('submitTambah-Poli-Dari');
-      Route::GET('{id}/edit', 'PoliDariController@Edit')->name('Edit-Poli-Dari');
-      Route::POST('{id}/edit', 'PoliDariController@submitEdit')->name('submitEdit-Poli-Dari');
-      Route::GET('{id}/hapus', 'PoliDariController@Hapus')->name('Hapus-Poli-Dari');
+      Route::GET('', 'PoliDariController@Data')->name('Data-Poliklinik');
+      Route::GET('tambah', 'PoliDariController@Tambah')->name('Tambah-Poliklinik');
+      Route::POST('tambah', 'PoliDariController@submitTambah')->name('submitTambah-Poliklinik');
+      Route::GET('{id}/edit', 'PoliDariController@Edit')->name('Edit-Poliklinik');
+      Route::POST('{id}/edit', 'PoliDariController@submitEdit')->name('submitEdit-Poliklinik');
+      Route::GET('{id}/hapus', 'PoliDariController@Hapus')->name('Hapus-Poliklinik');
     });
 
     Route::prefix('poli_tujuan')->group(function () {
-      Route::GET('', 'PoliTujuanController@Data')->name('Data-Poli-Tujuan');
-      Route::GET('tambah', 'PoliTujuanController@Tambah')->name('Tambah-Poli-Tujuan');
-      Route::POST('tambah', 'PoliTujuanController@submitTambah')->name('submitTambah-Poli-Tujuan');
-      Route::GET('{id}/edit', 'PoliTujuanController@Edit')->name('Edit-Poli-Tujuan');
-      Route::POST('{id}/edit', 'PoliTujuanController@submitEdit')->name('submitEdit-Poli-Tujuan');
-      Route::GET('{id}/hapus', 'PoliTujuanController@Hapus')->name('Hapus-Poli-Tujuan');
+      Route::GET('', 'PoliTujuanController@Data')->name('Data-Poliklinik-Tujuan');
+      Route::GET('tambah', 'PoliTujuanController@Tambah')->name('Tambah-Poliklinik-Tujuan');
+      Route::POST('tambah', 'PoliTujuanController@submitTambah')->name('submitTambah-Poliklinik-Tujuan');
+      Route::GET('{id}/edit', 'PoliTujuanController@Edit')->name('Edit-Poliklinik-Tujuan');
+      Route::POST('{id}/edit', 'PoliTujuanController@submitEdit')->name('submitEdit-Poliklinik-Tujuan');
+      Route::GET('{id}/hapus', 'PoliTujuanController@Hapus')->name('Hapus-Poliklinik-Tujuan');
     });
 
     Route::prefix('dokter')->group(function () {

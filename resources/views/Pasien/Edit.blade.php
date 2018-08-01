@@ -67,10 +67,10 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Status Menikah</label>
+              <label class="col-sm-2 control-label">Status Pernikahan</label>
               <div class="col-sm-10">
                 <select class="form-control" name="status_menikah" required>
-                  <option value="" selected hidden>Status Menikah</option>
+                  <option value="" selected hidden>Status Pernikahan</option>
                   <option value="1" {{$Pasien->status_menikah == 1 ? 'selected' : ''}}>Belum Menikah</option>
                   <option value="2" {{$Pasien->status_menikah == 2 ? 'selected' : ''}}>Sudah Menikah</option>
                 </select>
@@ -89,7 +89,7 @@
             </div>
             <hr>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Poli Dari</label>
+              <label class="col-sm-2 control-label">Poliklinik</label>
               <div class="col-sm-10">
                 <select class="form-control" name="poli_dari_id" required>
                   @foreach ($PoliDari as $DataPoliDari)
@@ -99,7 +99,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Poli Tujuan</label>
+              <label class="col-sm-2 control-label">Poliklinik Tujuan</label>
               <div class="col-sm-10">
                 <select class="form-control" name="poli_tujuan_id" required>
                   <option value="" selected hidden>Poli Tujuan</option>
@@ -149,7 +149,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Telah Diberikan</label>
+              <label class="col-sm-2 control-label">Terapi</label>
               <div class="col-sm-10">
                 <textarea class="form-control" name="telah_diberikan" rows="2" cols="80" required>{{$Pasien->telah_diberikan}}</textarea>
               </div>

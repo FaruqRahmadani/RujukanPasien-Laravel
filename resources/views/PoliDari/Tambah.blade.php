@@ -5,13 +5,13 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="{{Route('Data-Poli-Dari')}}" class="btn btn-labeled btn-primary btn-sm" type="button">
+          <a href="{{Route('Data-Poliklinik')}}" class="btn btn-labeled btn-primary btn-sm" type="button">
             <span class="btn-label"><i class="fa fa-angle-double-left fa-lg"></i>
             </span>Kembali
           </a>
         </div>
         <div class="panel-body">
-          <form class="form-horizontal" action="{{Route('submitTambah-Poli-Dari')}}" method="post">
+          <form class="form-horizontal" action="{{Route('submitTambah-Poliklinik')}}" method="post">
             @csrf
             <div class="form-group">
               <label class="col-sm-2 control-label">Nama</label>

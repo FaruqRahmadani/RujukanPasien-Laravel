@@ -48,8 +48,8 @@
                     <th>Nomor RM</th>
                     <th>Nama</th>
                     <th>Umur</th>
-                    <th>Poli Dari</th>
-                    <th>Poli Tujuan</th>
+                    <th>Poliklinik</th>
+                    <th>Poliklinik Tujuan</th>
                     <th>Dokter</th>
                     <th>Keluhan</th>
                     <th>Diagnosa</th>

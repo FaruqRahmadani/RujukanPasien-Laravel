@@ -5,7 +5,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="{{Route('Tambah-Poli-Tujuan')}}" class="btn btn-labeled btn-success btn-sm" type="button">
+          <a href="{{Route('Tambah-Poliklinik-Tujuan')}}" class="btn btn-labeled btn-success btn-sm" type="button">
             <span class="btn-label"><i class="fa fa-plus"></i>
             </span>Tambah
           </a>
@@ -26,11 +26,11 @@
                     <td>{{$Index+=1}}</td>
                     <td>{{$DataPoliTujuan->nama}}</td>
                     <td>
-                      <a href="{{Route('Edit-Poli-Tujuan', ['Id' => HCrypt::Encrypt($DataPoliTujuan->id)])}}" class="btn btn-labeled btn-info btn-xs">
+                      <a href="{{Route('Edit-Poliklinik-Tujuan', ['Id' => HCrypt::Encrypt($DataPoliTujuan->id)])}}" class="btn btn-labeled btn-info btn-xs">
                         <span class="btn-label"><i class="fa fa-pencil"></i>
                         </span>Edit
                       </a>
-                      <button class="btn btn-labeled btn-danger btn-xs" onclick="hapus('{{Route('Hapus-Poli-Tujuan', ['Id' => HCrypt::Encrypt($DataPoliTujuan->id)])}}')">
+                      <button class="btn btn-labeled btn-danger btn-xs" onclick="hapus('{{Route('Hapus-Poliklinik-Tujuan', ['Id' => HCrypt::Encrypt($DataPoliTujuan->id)])}}')">
                         <span class="btn-label"><i class="fa fa-close"></i>
                         </span>Hapus
                       </button>

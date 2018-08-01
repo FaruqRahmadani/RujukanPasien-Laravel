@@ -86,16 +86,16 @@
                   <span>Diagnosa</span>
                 </a>
               </li>
-              <li {{HRoute::Active('Data-Poli-Dari')}}>
-                <a href="{{Route('Data-Poli-Dari')}}">
+              <li {{HRoute::Active('Data-Poliklinik')}}>
+                <a href="{{Route('Data-Poliklinik')}}">
                   <em class="icon-layers"></em>
-                  <span>Poli Dari</span>
+                  <span>Poliklinik</span>
                 </a>
               </li>
-              <li {{HRoute::Active('Data-Poli-Tujuan')}}>
-                <a href="{{Route('Data-Poli-Tujuan')}}">
+              <li {{HRoute::Active('Data-Poliklinik-Tujuan')}}>
+                <a href="{{Route('Data-Poliklinik-Tujuan')}}">
                   <em class="icon-layers"></em>
-                  <span>Poli Tujuan</span>
+                  <span>Poliklinik Tujuan</span>
                 </a>
               </li>
               <li {{HRoute::Active('Data-Dokter')}}>

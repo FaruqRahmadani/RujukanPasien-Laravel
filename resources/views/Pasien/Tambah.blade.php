@@ -64,10 +64,10 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Status Menikah</label>
+              <label class="col-sm-2 control-label">Status Pernikahan</label>
               <div class="col-sm-10">
                 <select class="form-control" name="status_menikah" required>
-                  <option value="" selected hidden>Status Menikah</option>
+                  <option value="" selected hidden>Status Pernikahan</option>
                   <option value="1">Belum Menikah</option>
                   <option value="2">Sudah Menikah</option>
                 </select>
@@ -86,10 +86,10 @@
             </div>
             <hr>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Poli Dari</label>
+              <label class="col-sm-2 control-label">Poliklinik</label>
               <div class="col-sm-10">
                 <select class="form-control" name="poli_dari_id" required>
-                  <option value="" selected hidden>Poli Dari</option>
+                  <option value="" selected hidden>Poliklinik</option>
                   @foreach ($PoliDari as $DataPoliDari)
                     <option value="{{$DataPoliDari->id}}">{{$DataPoliDari->nama}}</option>
                   @endforeach
@@ -97,10 +97,10 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Poli Tujuan</label>
+              <label class="col-sm-2 control-label">Poliklinik Tujuan</label>
               <div class="col-sm-10">
                 <select class="form-control" name="poli_tujuan_id" required>
-                  <option value="" selected hidden>Poli Tujuan</option>
+                  <option value="" selected hidden>Poliklinik Tujuan</option>
                   @foreach ($PoliTujuan as $DataPoliTujuan)
                     <option value="{{$DataPoliTujuan->id}}">{{$DataPoliTujuan->nama}}</option>
                   @endforeach
@@ -148,7 +148,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Telah Diberikan</label>
+              <label class="col-sm-2 control-label">Terapi</label>
               <div class="col-sm-10">
                 <textarea class="form-control" name="telah_diberikan" rows="2" cols="80" required></textarea>
               </div>

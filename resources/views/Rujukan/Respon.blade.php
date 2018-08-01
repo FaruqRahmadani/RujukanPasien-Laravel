@@ -37,7 +37,7 @@
                 <td>{{$Pasien->alamat}}, {{$Pasien->Kecamatan->nama}}, {{$Pasien->Kota->nama}}</td>
               </tr>
               <tr>
-                <td>Status Menikah</td>
+                <td>Status Pernikahan</td>
                 <td>{{$Pasien->MenikahText}}</td>
               </tr>
               <tr>
@@ -45,11 +45,11 @@
                 <td>{{$Pasien->Pekerjaan->nama}}</td>
               </tr>
               <tr>
-                <td>Poli Dari</td>
+                <td>Poliklinik</td>
                 <td>{{$Pasien->PoliDari->nama}}</td>
               </tr>
               <tr>
-                <td>Poli Tujuan</td>
+                <td>Poliklinik Tujuan</td>
                 <td>{{$Pasien->PoliTujuan->nama}}</td>
               </tr>
               <tr>
@@ -73,7 +73,7 @@
                 <td>{{$Pasien->Diagnosa->kode}} - {{$Pasien->Diagnosa->keterangan}}</td>
               </tr>
               <tr>
-                <td>Telah diberikan</td>
+                <td>Terapi</td>
                 <td>{!!nl2br($Pasien->telah_diberikan)!!}</td>
               </tr>
             </table>
