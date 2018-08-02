@@ -24,12 +24,12 @@ class PasienController extends Controller
 
   public function DataFilter(Request $request){
     if ($request->filter == "Semua") {
-      $Pasien = Pasien::all();
+      $Pasien = Pasien::orderBy('id', 'desc')->get();
     }else if ($request->filter == "Menunggu") {
-      $Pasien = Pasien::doesnthave('Respon')->get();
+      $Pasien = Pasien::doesnthave('Respon')->orderBy('id', 'desc')->get();
     }else{
-      $PasienId = Respon::where('status', $request->filter)->pluck('id');
-      $Pasien = Pasien::whereIn('id', $PasienId)->get();
+      $PasienId = Respon::where('status', $request->filter)->pluck('pasien_id');
+      $Pasien = Pasien::whereIn('id', $PasienId)->orderBy('id', 'desc')->get();
     }
 
     return view('Pasien.Data', ['Pasien' => $Pasien, 'Filter' => $request->filter]);
@@ -41,7 +41,7 @@ class PasienController extends Controller
     }else if ($Filter == "Menunggu") {
       $Pasien = Pasien::doesnthave('Respon')->get();
     }else{
-      $PasienId = Respon::where('status', $Filter)->pluck('id');
+      $PasienId = Respon::where('status', $Filter)->pluck('pasien_id');
       $Pasien = Pasien::whereIn('id', $PasienId)->get();
     }
 
