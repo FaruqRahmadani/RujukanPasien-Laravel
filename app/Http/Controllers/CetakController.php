@@ -13,7 +13,7 @@ class CetakController extends Controller
   public function Rujukan($Id){
     $Id = HCrypt::Decrypt($Id);
     $Pasien = Pasien::findOrFail($Id);
-    $pdf = PDF::loadview('Cetak.Rujukan', ['Pasien' => $Pasien]);
+    $pdf = PDF::loadview('Cetak.RumahSakit.Rujukan', ['Pasien' => $Pasien]);
     return $pdf->setPaper('a4', 'potrait')->stream();
   }
 }

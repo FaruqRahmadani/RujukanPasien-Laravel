@@ -41,7 +41,7 @@ class RujukanController extends Controller
       $Pasien = Pasien::whereIn('id', $PasienId)->get();
     }
 
-    $pdf = PDF::loadview('Cetak.DataPasien', ['Pasien' => $Pasien]);
+    $pdf = PDF::loadview('Cetak.RumahSakit.DataPasien', ['Pasien' => $Pasien]);
     return $pdf->setPaper('a4', 'landscape')->stream();
   }
 

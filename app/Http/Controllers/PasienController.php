@@ -45,7 +45,7 @@ class PasienController extends Controller
       $Pasien = Pasien::whereIn('id', $PasienId)->get();
     }
 
-    $pdf = PDF::loadview('Cetak.DataPasien', ['Pasien' => $Pasien]);
+    $pdf = PDF::loadview('Cetak.Puskesmas.DataPasien', ['Pasien' => $Pasien]);
     return $pdf->setPaper('a4', 'landscape')->stream();
   }
 
