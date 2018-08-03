@@ -43,19 +43,21 @@
 <body>
   <table width="100%" align="center">
     <tr>
-      <td width="15%" align="center">
+      <td width="15%" align="right">
         <img height="70px" src="../public/img/logo/Banjarbaru.png" alt="Banjarbaru">
       </td>
       <td align="center">
         <b class="title">
           PEMERINTAH KOTA BANJARBARU
+          <br>
+          DINAS KESEHATAN
         </b>
         <br>
         <b style="font-size: 13pt">
           PUSKESMAS GUNTUNG PAYUNG BANJARBARU
         </b>
         <br>
-        Alamat : Jalan Sapta Marga, Guntung Payung, Landasan Ulin, Landasan Ulin Timur, Landasan Ulin, Kota Banjar Baru, Kalimantan Selatan 70721
+        Jalan Sapta Marga RT 13, Gg. Swadaya, Guntung Payung, Landasan Ulin, Landasan Ulin Timur, Landasan Ulin, Kota Banjar Baru, Kalimantan Selatan 70721
       </td>
     </tr>
   </table>
