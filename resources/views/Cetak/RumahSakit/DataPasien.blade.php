@@ -59,6 +59,9 @@
         <br>
         Telepon (0511)6749696 Faksimili (0511)6749697
       </td>
+      <td width="15%" align="left">
+        <img height="70px" src="../public/img/logo/rs.jpeg" alt="RS Idaman">
+      </td>
     </tr>
   </table>
   <hr>
