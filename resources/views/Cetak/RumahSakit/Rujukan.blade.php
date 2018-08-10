@@ -35,7 +35,7 @@
 
   footer{
     position: fixed;
-    bottom: 200px;
+    bottom: 250px;
     right: 50px;
   }
   </style>
@@ -150,9 +150,7 @@
         <td align="center" style="width: 30%">
           Puskesmas Guntung Payung
           <br>
-          <br>
-          <br>
-          <br>
+          <img src="../public/img/ttd_dokter/{{$Pasien->Dokter->gambar_ttd}}" style="height:100px; padding-top:50px">
           <br>
           {{$Pasien->Dokter->nama}}
         </td>

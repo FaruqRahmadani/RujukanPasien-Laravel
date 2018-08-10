@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="panel-body">
-          <form class="form-horizontal" action="{{Route('submitTambah-Dokter')}}" method="post">
+          <form class="form-horizontal" action="{{Route('submitTambah-Dokter')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label class="col-sm-2 control-label">NIP/NIK</label>
@@ -47,6 +47,12 @@
               <label class="col-sm-2 control-label">No. Telepon</label>
               <div class="col-sm-10">
                 <input class="form-control" type="text" placeholder="No. Telepon" name="no_telepon" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Upload Scan Tanda Tangan</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="file" name="gambar_ttd" required>
               </div>
             </div>
             <div class="form-group">
